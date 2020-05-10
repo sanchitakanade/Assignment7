@@ -1,0 +1,37 @@
+{
+  "name": "assignment7-api",
+  "version": "1.0.0",
+  "description": "MongoDB Create/Read operations-api",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e js,graphql -w . -w .env server.js",
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanchitakanade/assignment7.git"
+  },
+  "author": "Sanchita Kanade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanchitakanade/assignment6/products"
+  },
+  "homepage": "https://github.com/sanchitakanade/assignment6#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.11.0",
+    "dotenv": "^6.2.0",
+    "express": "^4.17.1",
+    "graphql": "^0.13.2",
+    "mongodb": "^3.5.5",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}

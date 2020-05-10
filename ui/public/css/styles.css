@@ -1,0 +1,16 @@
+/*
+  Author: Sanchita Kanade
+  File: styles.css
+*/
+
+body                              {font-family: Arial, Helvetica, sans-serif;}
+div, label, button                {font-size: 1.1em;}
+input, select                     {font-size: 0.9em;}
+
+.control-label {font-size: large;} 
+
+
+/* for links in product edit page */
+#prev, #next { font-size: medium;}
+
+.panel-title a {display: block; width: 100%; cursor: pointer;}

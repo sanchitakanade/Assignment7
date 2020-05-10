@@ -1,0 +1,72 @@
+""" Name: Sanchita Kanade
+    Class:CS648.02 Modern Full-Stack Web Development (Spring 2020)
+    Assignment: 7
+    File: schema.graphql """
+
+type Product {
+    _id: ID!
+    id:Int!
+    Category:ProductCategory!
+    Name:String!
+    Price:Float
+    Image:String
+}
+input productInputs {
+    Category:ProductCategory!
+    Name:String!
+    Price:Float
+    Image: String
+}
+
+"""Inputs for updateProduct: all are optional. Whichever is specified will
+be set to the given value, undefined fields will remain unmodified."""
+
+input ProductUpdateInputs {
+  Category: ProductCategory
+  Name:String
+  Price:Float
+  Image: String
+}
+
+enum ProductCategory {
+    Shirts
+    Jeans
+    Jackets
+    Sweaters
+    Accessories
+}
+type Query {
+  productList(
+    Category: ProductCategory
+    priceMax: Int
+  ): [Product!]!
+  product(id: Int!): Product!
+
+  productCounts(
+    Category: ProductCategory
+    priceMax: Int
+  ): [ProductCounts!]!
+
+  totalProducts(
+    Category: ProductCategory
+    priceMax: Int
+  ):Int
+}
+
+type Mutation {
+  addProduct(product:productInputs!):Product!
+  deleteProduct(id: Int!): Boolean!
+  updateProduct(id:Int!, changes:ProductUpdateInputs!):Product!
+
+}
+
+""" MongoDB aggregation """
+
+type ProductCounts {
+  Price:Float
+  Shirts: Int
+  Jeans: Int
+  Jackets: Int
+  Sweaters: Int
+  Accessories: Int
+}
